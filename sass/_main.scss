@@ -1,0 +1,295 @@
+@import "mixins";
+
+body {
+	height: 100%;
+	font: 400 15px/18px 'Roboto', Arial, Tahoma, sans-serif;
+	color: #989898;
+	background-color: #fbfbfb;
+}
+
+/*****Import fonts*****/
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700&subset=latin,cyrillic);
+
+@font-face {
+	font-family: "MariadProRegular";
+	src: url(../fonts/MariadProRegular.otf);
+}
+
+@font-face {
+	@include f-face(ElektraMediumProRegular, elektramediumpro-webfont)
+}
+
+@font-face {
+	@include f-face(ElektraTextProRegular, elektratextpro-webfont)
+}
+
+@font-face {
+	@include f-face(ElektraTextProBold, elektratextprobold-webfont)
+}
+
+@font-face {
+	@include f-face(EtelkaTextProBold, etelka_text_pro_bold-webfont)
+}
+
+/*****Base items styles*****/
+body input:focus:required:invalid,
+body textarea:focus:required:invalid {
+	border:red 2px solid
+}
+body input:required:valid,
+body textarea:required:valid {
+	border: green 2px solid
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #000;
+}
+
+a {
+	color: #909699;
+	&:hover {color: #0F5FAD;};
+}
+
+/*****WORK AREA*****/
+#right-content-ecp {
+	nav {
+		margin-bottom: 90px;
+		ul {
+			list-style: none;
+			padding-left: 0;
+		}
+		li {
+			float: left;
+			margin-right: 20px;
+			&:last-child {margin-right: 0;}
+		}
+		a {
+			color: #909699;
+			text-decoration: underline;
+			&:hover, &.current {color: #0F5FAD;};
+		}
+	}
+	.about-law, .article-law {
+		margin-bottom: 80px;
+		span {
+			@include f(300, 21px, 21px, Roboto);
+		}
+	}
+	.law-info {
+		margin-top: 30px;
+		.thumbnail {float: left;}
+		.text {
+			padding-left: 120px;
+			p {
+				margin-bottom: 15px;
+				@include f(400, 15px, 18px, Roboto);
+			}
+		}
+	}
+	.article-law {
+		margin-bottom: 15px;
+		p.articles {
+			@include f(500, 18px, 22px, Roboto);
+		}
+		p {
+			margin-bottom: 15px;
+			@include f(400, 15px, 18px, Roboto);
+		}
+	}
+
+	.article-info {
+		@extend .law-info;
+		margin-top: 0;
+		padding-top: 10px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid #000;
+		a {
+			display: block;
+			padding: 13px 0 0 18px;
+		}
+		p:last-child {margin-bottom: 0;};
+		&.box {
+			padding: 30px 0;
+		}
+	}
+}
+
+h2.title {
+	margin: 0 !important;
+	@include f(400, 48px, 56px, ElektraMediumProRegular); 
+}
+
+h3.title {
+	@extend h2.title;
+	font-size: 32px;
+	line-height: 36px;
+}
+
+h4.title {
+	margin-top: 20px;
+	margin-bottom: 40px;
+	@include f(400, 16px, 24px, Roboto); 
+	color: #fafafa;
+	text-align: center;
+}
+
+.btn {
+	float: right;
+	display: block;
+	max-width: 195px;
+	height: 48px;
+	padding: 0 40px;
+	@include f(700, 20px, 48px, ElektraTextProBold);
+	color: #fff;  
+	text-align: center;
+	text-decoration: none !important;
+	cursor: pointer;
+	overflow: hidden;
+	border: none;
+	background-color: #FF3838;
+	@include b-radius(16px);
+	&:hover {
+		background-color: lighten(#FF3838, 5%);
+		color: #fff !important;
+	}
+	&:active {
+		background-color: darken(#FF3838, 10%);
+		color: #fff !important;
+	}
+}
+
+.hid {display: none;}
+
+.answer {
+	@extend .popup-form;
+	max-width: 200px;
+	max-height: 300px;
+}
+
+/*****Popup*****/
+.popup-form {
+	max-width: 340px;
+	max-height: 420px;
+	padding: 10px;
+	background-color: rgba(0,0,0,.5);
+	@include b-radius(10px);
+	@include b-shadow(2px, 3px, 10px, rgba(0,0,0,.3));
+	input {
+		display: block;
+		width: 90%;
+		height: 40px;
+		margin: 0 auto 20px;
+		padding: 0 10px;
+		@include f(400, 16px, 40px, Roboto); 
+		color: #aaa;
+		border: 2px solid #555;
+		background-color: #fff;
+		@include b-radius(5px);
+	}
+	::-webkit-input-placeholder {
+		@include f(700, 14px, 40px, Roboto);
+		color: #777;
+	}
+
+	::-moz-placeholder {
+		@include f(700, 14px, 40px, Roboto);
+		color: #777;
+	}
+
+	:-moz-placeholder {
+		@include f(700, 14px, 40px, Roboto);
+		color: #777;
+	}
+
+	:-ms-input-placeholder {
+		@include f(700, 14px, 40px, Roboto);
+		color: #777;
+	}
+
+	.btn {
+		float: none;
+		margin: 60px auto 0;
+		font-size: 20px;
+		color: #fff;
+	}
+}
+
+/*****Media*****/
+@media screen and (max-width: 992px), handheld and (max-width: 992px) {
+
+}
+
+@media screen and (max-width: 767px), handheld and (max-width: 767px) {
+	#right-content-ecp {
+		nav {margin-top: 30px;}
+	}
+}
+
+@media screen and (max-width: 480px), handheld and (max-width: 480px) {
+
+	section {padding-bottom: 10px !important;}
+
+	#right-content-ecp {
+		nav {
+			margin-bottom: 0;
+			li {
+				float: none;
+				margin-right: 0;
+				margin-bottom: 10px;
+				text-align: center;
+			}
+		}
+		.law-info {
+			margin-top: 10px;
+			.thumbnail {
+				display: none;
+			}
+			.text {padding-left: 0;}
+		}
+		.about-law, .article-law {
+			margin-bottom: 15px;
+			span {
+				font-size: 18px;
+			}
+		}
+		.article-info.box {
+		    padding: 10px 0;
+		}
+	}
+
+	h2.title {
+	    font-size: 28px;
+	    line-height: 32px;
+	}
+
+	h3.title {
+	    font-size: 24px;
+	    line-height: 28px;
+	}
+
+	.btn {
+		float: none;
+		margin: 0 auto;
+	}
+}
+
+@media screen and (max-width: 320px), handheld and (max-width: 320px) {
+	#right-content-ecp {
+		.article-law {
+			p.articles {
+			    font-size: 16px !important;
+	    		line-height: 20px !important;
+			}
+		}
+	}
+
+	h2.title {
+	    font-size: 24px;
+	    line-height: 38px;
+	}
+
+	h3.title {
+	    font-size: 20px;
+	    line-height: 24px;
+	}
+}
