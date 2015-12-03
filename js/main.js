@@ -4,10 +4,10 @@ $(document).ready(function() {
 	$(".fancybox").fancybox();
 	
 	$("#callback").submit(function() {
+		$.fancybox.close();
 		setTimeout(function() {
-			$.fancybox.close();
+			$('.answer').fadeIn(1500).fadeOut(1000);
 		}, 1000);
-		return false;
 	});
 
 });

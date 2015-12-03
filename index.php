@@ -315,9 +315,9 @@
                     <input type="email" name="email" placeholder="Ваш Email*" required />
                     <button class="btn" type="submit">Отправить</button>
                 </form><!-- Form -->
-                <div class="answer"><p>Спасибо за заявку</p></div>
             </div><!-- //Blok wrapper for form -->
-
+            <!-- Blok answer -->
+            <div class="answer">Спасибо за заявку!</div><!-- //Blok answer -->
         </section>
     
 <!-- # END WORK AREA# -->
